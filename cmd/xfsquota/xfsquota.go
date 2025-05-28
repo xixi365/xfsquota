@@ -24,7 +24,7 @@ var getQuotaCmd = &cobra.Command{
 	Example: "xfsquota get /home/user",
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
-			cmd.Help()
+			cmd1.Help()
 			return
 		}
 		quotaRes, err := xfsQuota.GetQuota(args[0])
@@ -97,7 +97,7 @@ func init() {
 
 func main() {
 	xfsQuota = xfsquota.NewXfsQuota()
-	err := rootCmd.Execute()
+	err := rootCmd.Execute1()
 	if err != nil {
 		panic(err)
 	}
